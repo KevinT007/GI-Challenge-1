@@ -1,0 +1,74 @@
+body {
+  background-color: darkred;
+}
+/* Checkerboard - Took a while to figure this out then I learned about nth-child selector and how to use it. Also learned repeat for columns and rows. */
+.checkerboard {
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-template-rows: repeat(8, 100px);
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background: black;
+}
+
+.block:nth-child(16n + 1),
+.block:nth-child(16n + 3),
+.block:nth-child(16n + 5),
+.block:nth-child(16n + 7),
+.block:nth-child(16n + 10),
+.block:nth-child(16n + 12),
+.block:nth-child(16n + 14),
+.block:nth-child(16n + 16) {
+  background: white;
+}
+
+/* Flag  Literally stopped working and I don't know why. I'll fix it later.*/
+.flag {
+  height: 450px;
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(13, 100px);
+  background-color: whitesmoke;
+}
+
+.stripes {
+  background-image: url(Images/Stars.png);
+  width: 100px;
+  height: 100px;
+  display: flex;
+}
+
+.stripesr {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  background-color: red;
+}
+/* Shop - Honestly the easiest Part of this thing.  */
+
+.shop {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 5px;
+  width: 90%;
+}
+.shop > article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shop > article img {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price {
+  padding: 20px;
+  text-align: center;
+}
